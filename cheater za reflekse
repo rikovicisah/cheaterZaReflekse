@@ -1,0 +1,20 @@
+//Cheater za refleks test na stranici https://www.humanbenchmark.com/tests/reactiontime ---- ZELENA BOJA
+    // https://www.justpark.com/creative/reaction-time-test/  ---- CRVENA BOJA
+    
+    public static void main(String[] args) throws AWTException, InterruptedException 
+    {
+        Toolkit tool = Toolkit.getDefaultToolkit();
+        Robot r = new Robot();
+        while(true)
+        {
+            if(r.getPixelColor(MouseInfo.getPointerInfo().getLocation().x, MouseInfo.getPointerInfo().getLocation().y).getGreen() < 200
+                    && r.getPixelColor(MouseInfo.getPointerInfo().getLocation().x, MouseInfo.getPointerInfo().getLocation().y).getRed() > 150
+                    && r.getPixelColor(MouseInfo.getPointerInfo().getLocation().x, MouseInfo.getPointerInfo().getLocation().y).getBlue()< 150)
+            {
+                r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                Thread.sleep(10);
+                r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+            }
+        }
+        
+    }
